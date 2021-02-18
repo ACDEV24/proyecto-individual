@@ -18,9 +18,9 @@ public class AllFlightsPage extends javax.swing.JFrame {
      */
     public AllFlightsPage() {
         initComponents();
-        java.awt.EventQueue.invokeLater(() -> {
-            new AllFlightsPage().setVisible(true);
-        });
+//        java.awt.EventQueue.invokeLater(() -> {
+//            new AllFlightsPage().setVisible(true);
+//        });
     }
 
     /**
@@ -38,7 +38,11 @@ public class AllFlightsPage extends javax.swing.JFrame {
         edit_button = new javax.swing.JButton();
         delete_button = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                formMouseExited(evt);
+            }
+        });
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosed(java.awt.event.WindowEvent evt) {
                 formWindowClosed(evt);
@@ -125,27 +129,21 @@ public class AllFlightsPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jList1MousePressed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-//        final PrincipalPage principalPage = new PrincipalPage();
-//        principalPage.setVisible(true);
-        
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
         
-//        final PrincipalPage principalPage = new PrincipalPage();
-//        principalPage.setVisible(true);
-        
-        this.setVisible(false);
+        setVisible(false);
     }//GEN-LAST:event_formWindowClosed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-//        final PrincipalPage principalPage = new PrincipalPage();
-//        principalPage.setVisible(true);
         
-        this.setVisible(false);
     }//GEN-LAST:event_formWindowClosing
+
+    private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
+        
+    }//GEN-LAST:event_formMouseExited
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton delete_button;
