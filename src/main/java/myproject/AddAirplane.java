@@ -56,8 +56,6 @@ public class AddAirplane extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         pilot = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
         jLabel1.setText("Placa");
 
         plate.setToolTipText("");

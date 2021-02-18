@@ -11,16 +11,13 @@ import javax.swing.JList;
  *
  * @author ac
  */
-public class AllFlightsPage extends javax.swing.JFrame {
+public class AllAirplanes extends javax.swing.JFrame {
 
     /**
-     * Creates new form AllFlightsPage
+     * Creates new form AllAirplanes
      */
-    public AllFlightsPage() {
+    public AllAirplanes() {
         initComponents();
-//        java.awt.EventQueue.invokeLater(() -> {
-//            new AllFlightsPage().setVisible(true);
-//        });
     }
 
     /**
@@ -38,19 +35,7 @@ public class AllFlightsPage extends javax.swing.JFrame {
         edit_button = new javax.swing.JButton();
         delete_button = new javax.swing.JButton();
 
-        addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                formMouseExited(evt);
-            }
-        });
-        addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosed(java.awt.event.WindowEvent evt) {
-                formWindowClosed(evt);
-            }
-            public void windowClosing(java.awt.event.WindowEvent evt) {
-                formWindowClosing(evt);
-            }
-        });
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -117,9 +102,9 @@ public class AllFlightsPage extends javax.swing.JFrame {
         JList list = (JList) evt.getSource();
 
         final int index = list.locationToIndex(evt.getPoint());
-        
+
         System.out.println("Mouse Clicked " + index);
-        
+
         this.edit_button.setEnabled(true);
         this.delete_button.setEnabled(true);
     }//GEN-LAST:event_jList1MouseClicked
@@ -132,18 +117,40 @@ public class AllFlightsPage extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void formWindowClosed(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosed
-        
-        setVisible(false);
-    }//GEN-LAST:event_formWindowClosed
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(AllAirplanes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(AllAirplanes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(AllAirplanes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(AllAirplanes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
 
-    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        
-    }//GEN-LAST:event_formWindowClosing
-
-    private void formMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseExited
-        
-    }//GEN-LAST:event_formMouseExited
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new AllAirplanes().setVisible(true);
+            }
+        });
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton delete_button;
